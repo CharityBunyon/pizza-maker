@@ -8,12 +8,28 @@ const cheeses = [
 {id: "cheese4", name:"green", price: 0}
 ];
 
+const getSelectedCheeses = () => {
+    //11- get all cheese checkboxes (give domstraing a class of cheese)
+    //keep the checked ones in a new array
+    // return the new array
+    const selectedCheeses = [];
+    const cheeseCheckboxes = document.getElementsByClassName('cheese');
+    for (let j = 0; j < cheeseCheckboxes.length; j++) {
+        for (let k = 0; k < cheeses.length; k++){
+            if (cheeseCheckboxes[j].checked && cheeseCheckboxes[j].id === cheeses[k].id) {
+                selectedCheeses.push(cheeses[k]);
+            }
+        }
+    }
+    return selectedCheeses;
+}
+
 //4th: import utilities, make function, and export the function name
 const printCheeseOptions = () => {
     let domString = '';
     for (let i = 0; i < cheeses.length; i++){
     domString +=` <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="${cheeses[i].id}">
+    <input type="checkbox" class="form-check-input cheese" id="${cheeses[i].id}">
     <label class="form-check-label" for="${cheeses[i].id}">${cheeses[i].name}</label>
   </div>`;
     }
@@ -22,4 +38,4 @@ const printCheeseOptions = () => {
     utilities.printToDom('cheese-counter', domString);
 };
 
-export default {printCheeseOptions};
+export default {printCheeseOptions, getSelectedCheeses};
