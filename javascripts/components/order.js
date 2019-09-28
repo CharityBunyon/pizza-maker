@@ -4,7 +4,7 @@ import utilities from '../helpers/utilities.js';
 const createFinalOrder = (items) => {
     let domString2 = '';
     for (let i = 0; i < items.length; i++){
-        domString2 += `<h2>${items[i].name}</h2>`;
+        domString2 += `<h2>${items[i].name} $${items[i].price}</h2>`;
     }
     utilities.printToDom('final-order', domString2);
     //this will overwrite the button but we could make another div
@@ -28,5 +28,7 @@ const printOrderButton = () => {
 };
 
 //8- made function and added import
+
+
 
 export default { printOrderButton };
