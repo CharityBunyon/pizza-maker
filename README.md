@@ -1,1 +1,18 @@
 # Pizza Maker
+
+## Description
+Use this application to select pizza toppings and get a final cost for your pizza creation.
+
+## Screenshots
+
+
+## How to run
+* Clone down this project 
+* Install [http-server](https://www.npmjs.com/package/http-server) from npm
+* At the root of this project run the following command: `hs -p 8888`
+
+```js
+const hi = 5;
+```
+
+* In your browser navigat to `https:localhost:8888`
